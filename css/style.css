@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root {
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+body {
+    background: lightgray;
+    font-family: var(--ff-secondary);
+}
+
+nav {
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+
+.nav-center {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+    
+    .show-links {
+        height: fit-content;
+        transition: var(--transition);
+    }
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: blue;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+        color: blueviolet;
+        transform: rotate(90deg);
+    }
+
+    .logo {
+        height: 40px;
+    }
+}
+
+.nav-links {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    
+    &  a {
+        padding: 0.5rem;
+        display: block;
+        transition: var(--transition);
+    
+        &:hover {
+            color: blueviolet;
+            background: lightskyblue;
+            padding-left: 1rem;
+        }
+    }
+}
+
+.nav-sm {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .nav-center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-links {
+            height: auto;
+            display: flex;
+
+            & a {
+                margin: 0 0.5rem;
+
+                &:hover {
+                    background: none;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .nav-sm {
+            display: flex;
+
+            & a {
+                margin: 0 0.5rem;
+
+                & i {
+                    color: blue;
+                    transition: var(--transition);
+
+                    &:hover {
+                        color: blueviolet;
+                    }
+                }
+            }
+        }
+    }
+}
+
